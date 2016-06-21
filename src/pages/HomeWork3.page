@@ -5,20 +5,27 @@
 <apex:page controller="HomeWorkController" id="HomeWork3">
     <apex:form >
 
-        <apex:pageBlock title="My Content" mode="detail">
+        <apex:pageBlock id="block" mode="edit">
+            <apex:pageBlockSection columns="1">
 
-            <apex:pageBlockSection title="My Content Section" columns="1" showHeader="true">
-                <apex:inputField value="{!name}"/>
+                <apex:pageBlockSectionItem>
+
+                    <apex:outputLabel for="name">Enter your name </apex:outputLabel>
+
+                    <apex:panelGroup>
+
+                        <apex:inputText  id="nameID" value="{!name}"/>
+                        <apex:outputText value="{!name}"/>
+
+                    </apex:panelGroup>
+
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem>
+                    <apex:commandButton value="show name" rerender="block" />
+                </apex:pageBlockSectionItem>
+
             </apex:pageBlockSection>
+            </apex:pageBlock>
 
-            <apex:commandButton action="{!showName}" value="show name"> <apex:param name="name" value="{!name}"/>
-            </apex:commandButton>
-        </apex:pageBlock>
-
-        <apex:pageBlock title="Your Name">
-
-            <apex:outputText value="{!name}" escape="false"/>
-
-        </apex:pageBlock>
     </apex:form>
 </apex:page>
