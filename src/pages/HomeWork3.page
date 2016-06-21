@@ -1,0 +1,24 @@
+<!--
+ - Created by LanaPC on 21.06.2016.
+ -->
+
+<apex:page controller="HomeWorkController" id="HomeWork3">
+    <apex:form >
+
+        <apex:pageBlock title="My Content" mode="detail">
+
+            <apex:pageBlockSection title="My Content Section" columns="1" showHeader="true">
+                <apex:inputField value="{!name}"/>
+            </apex:pageBlockSection>
+
+            <apex:commandButton action="{!showName}" value="show name"> <apex:param name="name" value="{!name}"/>
+            </apex:commandButton>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Your Name">
+
+            <apex:outputText value="{!name}" escape="false"/>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
