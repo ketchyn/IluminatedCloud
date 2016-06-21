@@ -5,14 +5,12 @@ public with sharing class HomeWorkController {
     public String getName(){
         return name;
     }
+    //
+    public void setName( String name){
+        this.name=name;
+    }
     public HomeWorkController() {
 
     }
-
-//
-    public PageReference showName(){
-        name = apexpages.currentpage().getparameters().get('Name');
-        //return name;
-
-    }
+    
 }
