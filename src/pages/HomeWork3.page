@@ -10,7 +10,7 @@
 
                 <apex:pageBlockSectionItem>
 
-                    <apex:outputLabel for="name">Enter your name </apex:outputLabel>
+                    <apex:outputLabel>Enter your name </apex:outputLabel>
 
                     <apex:panelGroup>
 
