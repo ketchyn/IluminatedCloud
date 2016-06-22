@@ -1,0 +1,27 @@
+<!--
+ - Created by LanaPC on 22.06.2016.
+ -->
+
+<apex:page id="HomeWork5" standardController="Account" extensions="HM5Controller">
+    <apex:form >
+
+        <apex:pageBlock title="Accounts" mode="detail" id="block">
+
+
+
+            <apex:pageBlockSection  columns="2" showHeader="true">
+                <apex:outputField value="{!account.name}" rendered= "{!notedit}"/>
+                <apex:inputField value="{!account.name}" rendered= "{!not(notedit)}" />
+
+                <apex:outputField value="{!account.Industry}" rendered= "{!notedit}"/>
+                <apex:inputField value="{!account.Industry}" rendered= "{!not(notedit)}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="edit" action="{!edit}"  rendered="{!notedit}" />
+            <apex:commandButton value="save" action="{!save}"  rendered="{!not(notedit)}" />
+            <apex:commandButton value="cansel" action="{!cansel}"  rendered="{!not(notedit)}" />
+
+
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
