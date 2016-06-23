@@ -1,0 +1,34 @@
+<!--
+ - Created by LanaPC on 22.06.2016.
+ -->
+
+<apex:page id="HM6" controller="HM6Controller">
+    <apex:form >
+
+        <!--вызов мытода контроллера внутри java script по имени которое передается в качетсве атрибута-->
+
+        <apex:actionFunction action="{!save}" name="save" reRender="block"/>
+        <script>
+            function enterPress(e){
+                if(e.keyCode==13){
+                    validate();
+                }
+            }
+            function validate(){
+                save();
+            }
+
+        </script>
+        <apex:pageBlock id="block" >
+            <apex:pageBlockSection onkeypress="enterPress(event)">
+                <apex:inputField value="{!hm.index1__c}"/>
+                <apex:inputField value="{!hm.index2__c}"/>
+                <apex:outputField value="{!hm.reason_not_equals__c}" rendered="{!NOT(check)}" />
+             
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+
+        <apex:pageMessages />
+    </apex:form>
+</apex:page>
